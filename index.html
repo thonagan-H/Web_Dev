@@ -1,0 +1,118 @@
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CHICAGO bnb Data</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="shortcut icon" href="">
+
+    <!-- MAP JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+    
+    <script src="/static/js/leaflet-heat.js"></script>
+    <script src="/static/js/neighbourhoods.geojson"></script>
+
+
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+                <div class="col-md-12 jumbotron text-center">
+                    <h2><strong>BNB Analysis in CHICAGO<strong></h2>
+                    <p>The graphical analysis of BNB and Crime rate in Chicago</p>
+                </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well">
+                    <h4>SELECT Neighborhood:</h4>
+                    <select id="selDataset" onchange="optionChanged(this.value)"></select>
+  <!--                  <a href="map" class="button">Go to Map</a> -->
+                </div>
+                
+                <div class="panel panel-primary col-md-4">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Entire Home Data</h3>
+                    </div>
+                    <div id="entire" class="panel-body"></div>
+                </div>
+           
+                <div class="panel panel-primary col-md-4">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Private Room Data</h3>
+                    </div>
+                    <div id="private" class="panel-body"></div>
+                </div>
+          
+                <div class="panel panel-primary col-md-4">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Shared Room Data</h3>
+                    </div>
+                    <div id="shared" class="panel-body"></div>
+                </div>
+            </div>
+
+        </div>
+   
+        <div class="row">
+            <div class="col-md-12",style="display:inline-block">
+                <div class="col-md-6">
+                    <div id="pie"></div>
+                </div>
+                <div class="col-md-6">
+                    <div id="gauge"></div>
+                </div>
+            </div>
+        </div>
+        <div class = "row"></div>
+        
+        <!-- Div for paddding -->
+        <div class="col-md-12" style="padding-bottom:20px;">
+        </div>
+
+        <div class="row">
+            <div class="col-md-12", style="display:inline-block",>
+                <div class="topleft" style="text-align:center; float:left;">
+                    <div id="bubble" ></div>
+                </div>
+            </div>     
+        </div>
+        
+        <!-- Div for paddding -->
+        <div class="col-md-12" style="padding-bottom:20px;">
+        </div>
+
+        <div class="row">
+            <div id="jumbot" class="col-md-12 jumbotron text-center">
+                <h2><strong>BNB Listing vs Number of Crimes in CHICAGO Neighborhood</strong></h2>
+                    
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="scatter1"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="scatter2"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                    <div class="col-md-12">
+                        <div id = "map" style="width: 100%; height: 400px"></div>
+                    </div>
+                </div>
+        </div>
+
+    </div>
